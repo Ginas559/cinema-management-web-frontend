@@ -1,0 +1,149 @@
+.upload-avatar-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(10, 25, 50, 0.7); /* overlay mờ navy */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.upload-avatar-modal {
+  background: #0b1a3d; /* navy đậm */
+  padding: 2rem;
+  border-radius: 16px;
+  width: 400px;
+  max-width: 90%;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.upload-avatar-title {
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #aad4ff; /* xanh nhạt nổi bật */
+  margin-bottom: 1rem;
+}
+
+.upload-avatar-upload-area {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  align-items: center;
+}
+
+.upload-avatar-preview {
+  width: 160px;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 3px solid #1e3a70;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+}
+
+.upload-avatar-placeholder {
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  background: #11264d;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #7da4d9;
+  text-align: center;
+  border: 2px dashed #1e3a70;
+}
+
+.upload-avatar-icon {
+  width: 48px;
+  height: 48px;
+  margin-bottom: 0.5rem;
+}
+
+.upload-avatar-file-input-wrapper {
+  width: 100%;
+  text-align: center;
+}
+
+.upload-avatar-file-label {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+}
+
+.upload-avatar-file-input {
+  display: none;
+}
+
+.upload-avatar-file-button {
+  background: #1e3a70;
+  color: #fff;
+  padding: 0.5rem 1.2rem;
+  border-radius: 8px;
+  font-weight: 600;
+  transition: background 0.3s ease;
+}
+
+.upload-avatar-file-button:hover {
+  background: #3761a8;
+}
+
+.upload-avatar-btn-upload {
+  margin-top: 1rem;
+  width: 100%;
+  padding: 0.6rem;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  color: #fff;
+  background: #0f2a5c;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.upload-avatar-btn-upload:hover {
+  background: #1a3e85;
+}
+
+.upload-avatar-btn-disabled {
+  background: #445f8c !important;
+  cursor: not-allowed;
+}
+
+.upload-avatar-message {
+  margin-top: 0.5rem;
+  font-weight: 600;
+  text-align: center;
+}
+
+.upload-avatar-success {
+  color: #7fffd4; /* mint neon */
+}
+
+.upload-avatar-error {
+  color: #ff6b6b; /* đỏ nổi bật */
+}
+
+.upload-avatar-back-button {
+  margin-top: 1rem;
+  background: transparent;
+  border: none;
+  color: #aad4ff;
+  font-weight: 600;
+  cursor: pointer;
+  align-self: center;
+  transition: color 0.3s ease;
+}
+
+.upload-avatar-back-button:hover {
+  color: #ffffff;
+}

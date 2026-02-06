@@ -1,0 +1,375 @@
+.profile-me-container {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+.profile-me-card {
+    background: rgba(20, 24, 37, 0.9);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
+    border-radius: 16px;
+    padding: 1.5rem;
+}
+
+.profile-me-main-card {
+    margin-bottom: 1.5rem;
+}
+
+.profile-me-text {
+    color: #fff;
+    margin-bottom: 1rem;
+}
+
+.profile-me-btn {
+    padding: 0.5rem 1.25rem;
+    border: none;
+    border-radius: 8px;
+    font-size: 0.875rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.profile-me-btn-primary {
+    background-color: #0d6efd;
+    color: white;
+}
+
+.profile-me-btn-primary:hover {
+    background-color: #0b5ed7;
+    transform: translateY(-1px);
+}
+
+.profile-me-btn-outline {
+    background-color: transparent;
+    color: #0d6efd;
+    border: 1px solid #0d6efd;
+}
+
+.profile-me-btn-outline:hover {
+    background-color: #0d6efd;
+    color: white;
+}
+
+.profile-me-btn-edit {
+    background-color: transparent;
+    color: #0dcaf0;
+    border: 1px solid #0dcaf0;
+    margin-left: 0.5rem;
+}
+
+.profile-me-btn-edit:hover {
+    background-color: #0dcaf0;
+    color: #141825;
+}
+
+.profile-me-placeholder {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.profile-me-placeholder-line {
+    height: 1rem;
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0.06) 25%, rgba(255, 255, 255, 0.12) 50%, rgba(255, 255, 255, 0.06) 75%);
+    background-size: 200% 100%;
+    animation: profile-me-shimmer 1.5s infinite;
+    border-radius: 4px;
+}
+
+.profile-me-placeholder-line-long {
+    width: 60%;
+}
+
+.profile-me-placeholder-line-short {
+    width: 40%;
+}
+
+@keyframes profile-me-shimmer {
+    0% {
+        background-position: 200% 0;
+    }
+    100% {
+        background-position: -200% 0;
+    }
+}
+
+.profile-me-loading-text {
+    color: rgba(255, 255, 255, 0.8);
+    margin-top: 1rem;
+}
+
+.profile-me-error {
+    color: #dc3545;
+    font-weight: 500;
+}
+
+.profile-me-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.profile-me-title {
+    color: #fff;
+    margin: 0;
+    font-weight: 800;
+    font-size: 1.75rem;
+    letter-spacing: 0.2px;
+}
+
+.profile-me-content {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.profile-me-avatar-wrapper {
+    text-align: center;
+}
+
+.profile-me-avatar {
+    width: 240px;
+    height: 240px;
+    object-fit: cover;
+    border-radius: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.profile-me-info {
+    flex: 1;
+}
+
+.profile-me-info-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+}
+
+.profile-me-field {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.profile-me-label {
+    color: rgba(255, 255, 255, 0.65);
+    text-transform: uppercase;
+    font-size: 0.75rem;
+    font-weight: 600;
+}
+
+.profile-me-value {
+    color: #fff;
+    font-weight: 600;
+}
+
+.profile-me-social-section {
+    margin-top: 1rem;
+}
+
+.profile-me-social-title {
+    color: white;
+    font-weight: 600;
+    font-size: 1.125rem;
+    margin-bottom: 1rem;
+}
+
+.profile-me-social-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+}
+
+.profile-me-social-btn {
+    min-width: 120px;
+    padding: 0.5rem 1rem;
+    color: white;
+    font-weight: 600;
+    font-size: 0.875rem;
+    border: none;
+    border-radius: 8px;
+    text-decoration: none;
+    text-align: center;
+    transition: all 0.3s ease;
+    opacity: 1;
+}
+
+.profile-me-social-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.profile-me-social-btn-disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.profile-me-social-btn-disabled:hover {
+    transform: none;
+    box-shadow: none;
+}
+
+.profile-me-favorites-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+}
+
+.profile-me-favorites-title {
+    color: rgba(255, 255, 255, 0.9);
+    margin: 0;
+    font-size: 1.25rem;
+    font-weight: 600;
+}
+
+.profile-me-empty-favorites {
+    padding: 1.5rem;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px dashed rgba(255, 255, 255, 0.12);
+    border-radius: 8px;
+    color: rgba(255, 255, 255, 0.7);
+    text-align: center;
+}
+
+.profile-me-favorites-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1rem;
+}
+
+.profile-me-favorite-item {
+    padding: 1.25rem;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    transition: all 0.3s ease;
+}
+
+.profile-me-favorite-item:hover {
+    background: rgba(255, 255, 255, 0.06);
+    transform: translateY(-2px);
+}
+
+.profile-me-favorite-title {
+    color: #fff;
+    font-weight: 600;
+    font-size: 1rem;
+}
+
+.profile-me-favorite-rating {
+    color: #9ca3af;
+    font-size: 0.875rem;
+}
+
+/* Responsive */
+@media (min-width: 768px) {
+    .profile-me-content {
+        flex-direction: row;
+        align-items: flex-start;
+    }
+
+    .profile-me-avatar-wrapper {
+        flex-shrink: 0;
+    }
+
+    .profile-me-info {
+        flex: 1;
+    }
+}
+
+@media (max-width: 767px) {
+    .profile-me-container {
+        padding: 0 0.75rem;
+    }
+
+    .profile-me-card {
+        padding: 1rem;
+    }
+
+    .profile-me-title {
+        font-size: 1.5rem;
+    }
+
+    .profile-me-avatar {
+        width: 180px;
+        height: 180px;
+    }
+
+    .profile-me-info-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .profile-me-favorites-grid {
+        grid-template-columns: 1fr;
+    }
+
+    /* [FIX] Đổi toàn bộ chữ đề xuất thành màu trắng rõ hơn */
+    .rec-title,
+    .rec-col-title,
+    .rec-chip,
+    .rec-strong,
+    .rec-empty,
+    .rec-movie,
+    .rec-meta {
+        color: #ffffff !important;
+    }
+
+    /* riêng icon hoặc emoji giữ nguyên, nên ta chỉ force chữ */
+    .rec-title b,
+    .rec-col-title b,
+    .rec-chip b {
+        color: #ffffff !important;
+    }
+
+    /* [FINAL FIX] Ép toàn bộ chữ trong phần đề xuất thành màu trắng rõ */
+    .rec-card * {
+        color: #ffffff !important;
+    }
+
+    /* Tăng độ sáng tiêu đề và phân cách */
+    .rec-title {
+        color: #ffffff !important;
+        font-weight: 700;
+    }
+
+    .rec-col-title {
+        color: #ffffff !important;
+        font-weight: 600;
+    }
+
+    .rec-chip, .rec-strong {
+        color: #ffffff !important;
+    }
+
+    .rec-movie, .rec-meta {
+        color: #ffffff !important;
+    }
+
+    .rec-empty {
+        color: #ffffff !important;
+        opacity: 0.9;
+    }
+
+    /* Làm viền và nền đậm hơn cho đồng bộ theme */
+    .rec-col {
+        border-color: rgba(255,255,255,0.15) !important;
+        background: rgba(255,255,255,0.05) !important;
+    }
+
+    .rec-item {
+        border-color: rgba(255,255,255,0.15) !important;
+        background: rgba(255,255,255,0.08) !important;
+    }
+
+
+}

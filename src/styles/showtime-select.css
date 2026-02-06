@@ -1,0 +1,684 @@
+/* ========== SCOPED VARIABLES (chỉ cho select-showtime) ========== */
+.select-showtime-page {
+    --st-bg-primary: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+    --st-bg-card: linear-gradient(135deg, #1e293b 0%, #334155 100%);
+    --st-bg-dark: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+    --st-bg-hover: linear-gradient(135deg, #1e40af 0%, #1e3a8a 100%);
+    --st-bg-active: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%);
+    
+    --st-text-primary: #f1f5f9;
+    --st-text-secondary: #cbd5e1;
+    --st-text-muted: #64748b;
+    --st-text-accent: #3b82f6;
+    
+    --st-border-color: rgba(148, 163, 184, 0.15);
+    --st-shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.3);
+    --st-shadow-md: 0 10px 30px rgba(0, 0, 0, 0.5);
+    --st-shadow-lg: 0 20px 60px rgba(0, 0, 0, 0.6);
+    
+    --st-radius-sm: 12px;
+    --st-radius-md: 16px;
+    --st-radius-lg: 20px;
+    
+    --st-transition: all 0.3s ease;
+}
+
+/* ========== PAGE LAYOUT ========== */
+.select-showtime-page {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    min-height: 100vh;
+    background: var(--st-bg-primary);
+}
+
+/* ========== SHARED CARD STYLES ========== */
+.select-showtime-movie-header,
+.select-showtime-date-filter,
+.select-showtime-section,
+.select-showtime-status,
+.select-showtime-tab-content {
+    background: var(--st-bg-card);
+    border-radius: var(--st-radius-md);
+    box-shadow: var(--st-shadow-md);
+    border: 1px solid var(--st-border-color);
+}
+
+/* ========== MOVIE HEADER ========== */
+.select-showtime-movie-header {
+    padding: 30px;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.select-showtime-movie-header h2 {
+    color: var(--st-text-primary);
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 10px;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.select-showtime-movie-header p {
+    color: #94a3b8;
+    font-size: 16px;
+    margin: 0;
+}
+
+/* ========== DATE FILTER ========== */
+.select-showtime-date-filter {
+    padding: 25px;
+    margin-bottom: 30px;
+}
+
+.select-showtime-date-filter h3 {
+    color: var(--st-text-primary);
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.select-showtime-date-buttons {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.select-showtime-date-btn {
+    padding: 12px 20px;
+    min-width: 120px;
+    border: 2px solid #334155;
+    background: #1e293b;
+    color: var(--st-text-secondary);
+    border-radius: var(--st-radius-sm);
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 500;
+    transition: var(--st-transition);
+}
+
+.select-showtime-date-btn:hover {
+    border-color: var(--st-text-accent);
+    color: #60a5fa;
+    background: #1e3a5f;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+}
+
+.select-showtime-date-btn.active {
+    background: var(--st-bg-active);
+    color: white;
+    border-color: transparent;
+    box-shadow: 0 6px 20px rgba(59, 130, 246, 0.5);
+}
+
+/* ========== SHOWTIME SECTION ========== */
+.select-showtime-section {
+    padding: 30px;
+}
+
+.select-showtime-section h3 {
+    color: var(--st-text-primary);
+    font-size: 22px;
+    font-weight: 600;
+    margin-bottom: 25px;
+    text-align: center;
+}
+
+.select-showtime-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 16px;
+    margin-top: 20px;
+}
+
+.select-showtime-btn {
+    padding: 20px;
+    border: 2px solid #334155;
+    background: var(--st-bg-dark);
+    color: var(--st-text-secondary);
+    border-radius: var(--st-radius-sm);
+    cursor: pointer;
+    transition: var(--st-transition);
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    align-items: center;
+    box-shadow: var(--st-shadow-sm);
+}
+
+.select-showtime-btn:hover {
+    border-color: var(--st-text-accent);
+    background: var(--st-bg-hover);
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(59, 130, 246, 0.4);
+}
+
+.select-showtime-btn:hover .select-showtime-time {
+    color: #60a5fa;
+    text-shadow: 0 0 20px rgba(96, 165, 250, 0.5);
+}
+
+.select-showtime-btn:hover .select-showtime-language,
+.select-showtime-btn:hover .select-showtime-room {
+    color: var(--st-text-secondary);
+}
+
+.select-showtime-time {
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--st-text-accent);
+    transition: var(--st-transition);
+}
+
+.select-showtime-language {
+    font-size: 13px;
+    color: var(--st-text-muted);
+    font-weight: 500;
+    background: rgba(51, 65, 85, 0.6);
+    padding: 4px 12px;
+    border-radius: 20px;
+    transition: var(--st-transition);
+    border: 1px solid rgba(148, 163, 184, 0.2);
+}
+
+.select-showtime-btn:hover .select-showtime-language {
+    background: rgba(59, 130, 246, 0.2);
+    color: #93c5fd;
+    border-color: rgba(59, 130, 246, 0.3);
+}
+
+.select-showtime-room {
+    font-size: 12px;
+    color: var(--st-text-muted);
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.select-showtime-no-showtime {
+    text-align: center;
+    color: #94a3b8;
+    font-size: 16px;
+    padding: 40px;
+    grid-column: 1 / -1;
+    font-style: italic;
+}
+
+.select-showtime-status {
+    text-align: center;
+    margin: 40px 20px;
+    padding: 30px;
+    font-size: 18px;
+    color: var(--st-text-secondary);
+}
+
+.select-showtime-status.error {
+    color: #fca5a5;
+    background: linear-gradient(135deg, #450a0a 0%, #7f1d1d 100%);
+    border: 2px solid #dc2626;
+}
+
+.select-showtime-tabs-section {
+    display: flex;
+    justify-content: center;
+    gap: 0;
+    margin: 40px 0 0 0;
+    padding: 0;
+    background: rgba(15, 23, 42, 0.3);
+    border-radius: var(--st-radius-md) var(--st-radius-md) 0 0;
+    overflow: hidden;
+    border: 1px solid var(--st-border-color);
+    border-bottom: none;
+}
+
+.select-showtime-tab-button {
+    flex: 1;
+    max-width: 200px;
+    padding: 18px 32px;
+    background: transparent;
+    color: var(--st-text-muted);
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 600;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.select-showtime-tab-button::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%) scaleX(0);
+    width: 80%;
+    height: 3px;
+    background: linear-gradient(90deg, #3b82f6, #60a5fa);
+    border-radius: 3px 3px 0 0;
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.select-showtime-tab-button:hover {
+    color: #94a3b8;
+    background: rgba(59, 130, 246, 0.08);
+}
+
+.select-showtime-tab-button.active {
+    color: #60a5fa;
+    background: rgba(59, 130, 246, 0.15);
+}
+
+.select-showtime-tab-button.active::before {
+    transform: translateX(-50%) scaleX(1);
+}
+
+.select-showtime-tab-content {
+    background: linear-gradient(135deg, rgba(15, 23, 42, 0.95) 0%, rgba(30, 41, 59, 0.95) 100%);
+    backdrop-filter: blur(10px);
+    padding: 40px;
+    border-radius: 0 0 var(--st-radius-lg) var(--st-radius-lg);
+    box-shadow: var(--st-shadow-lg);
+    border-top: none;
+    min-height: 350px;
+}
+
+.select-showtime-tab-panel {
+    animation: selectShowtimeFadeInUp 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@keyframes selectShowtimeFadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.select-showtime-tab-panel h3 {
+    color: var(--st-text-primary);
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    border-bottom: 2px solid rgba(59, 130, 246, 0.3);
+    position: relative;
+    display: inline-block;
+}
+
+.select-showtime-tab-panel h3::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 60px;
+    height: 2px;
+    background: linear-gradient(90deg, #3b82f6, #60a5fa);
+}
+
+.select-showtime-tab-overview {
+    color: var(--st-text-primary);
+}
+
+.select-showtime-tab-overview p {
+    color: #f8fafc;
+    font-size: 17px;
+    line-height: 1.9;
+    margin-bottom: 35px;
+    padding: 28px;
+    background: linear-gradient(135deg, rgba(59, 130, 246, 0.1) 0%, rgba(30, 41, 59, 0.5) 100%);
+    border-radius: var(--st-radius-md);
+    border-left: 5px solid var(--st-text-accent);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    position: relative;
+    overflow: hidden;
+}
+
+.select-showtime-tab-overview p::before {
+    content: '"';
+    position: absolute;
+    top: 10px;
+    left: 15px;
+    font-size: 60px;
+    color: rgba(59, 130, 246, 0.15);
+    font-family: Georgia, serif;
+    line-height: 1;
+}
+
+.select-showtime-tab-overview strong {
+    color: #93c5fd;
+}
+
+.select-showtime-movie-details {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 18px;
+    margin-top: 25px;
+}
+
+.select-showtime-movie-details p {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 24px;
+    margin: 0;
+    background: linear-gradient(135deg, rgba(15, 23, 42, 0.6) 0%, rgba(30, 41, 59, 0.4) 100%);
+    border-radius: 14px;
+    border: 1px solid var(--st-border-color);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+    font-size: 15px;
+    line-height: 1.5;
+}
+
+.select-showtime-movie-details p::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 4px;
+    height: 100%;
+    background: linear-gradient(180deg, #3b82f6, #60a5fa);
+    transform: scaleY(0);
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.select-showtime-movie-details p:hover {
+    background: linear-gradient(135deg, rgba(59, 130, 246, 0.15) 0%, rgba(30, 41, 59, 0.5) 100%);
+    border-color: rgba(59, 130, 246, 0.4);
+    transform: translateX(8px);
+    box-shadow: 0 8px 24px rgba(59, 130, 246, 0.25);
+}
+
+.select-showtime-movie-details p:hover::before {
+    transform: scaleY(1);
+}
+
+.select-showtime-movie-details strong {
+    color: var(--st-text-secondary);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* ========== CAST TAB ========== */
+.select-showtime-tab-cast {
+    color: var(--st-text-primary);
+}
+
+.select-showtime-cast-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    gap: 16px;
+}
+
+.select-showtime-cast-list li {
+    padding: 22px 28px;
+    background: linear-gradient(135deg, rgba(59, 130, 246, 0.08) 0%, rgba(15, 23, 42, 0.5) 100%);
+    border-radius: 14px;
+    color: var(--st-text-secondary);
+    font-size: 17px;
+    font-weight: 500;
+    border-left: 4px solid var(--st-text-accent);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    display: flex;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.select-showtime-cast-list li::before {
+    content: "👤";
+    margin-right: 16px;
+    font-size: 24px;
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.select-showtime-cast-list li::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(59, 130, 246, 0.1), transparent);
+    transform: translateX(-100%);
+    transition: transform 0.6s ease;
+}
+
+.select-showtime-cast-list li:hover {
+    background: linear-gradient(135deg, rgba(59, 130, 246, 0.2) 0%, rgba(30, 41, 59, 0.6) 100%);
+    transform: translateX(12px);
+    border-left-color: #60a5fa;
+    box-shadow: 0 6px 20px rgba(59, 130, 246, 0.3);
+}
+
+.select-showtime-cast-list li:hover::before {
+    transform: scale(1.2) rotate(10deg);
+}
+
+.select-showtime-cast-list li:hover::after {
+    transform: translateX(100%);
+}
+
+.select-showtime-tab-cast p {
+    color: var(--st-text-primary);
+    text-align: center;
+    padding: 40px;
+    font-style: italic;
+}
+
+.select-showtime-tab-reviews {
+    color: var(--st-text-primary);
+}
+
+.select-showtime-reviews-list {
+    display: grid;
+    gap: 24px;
+}
+
+.select-showtime-movie-poster {
+    width: 200px;
+    height: 300px;
+    border-radius: var(--st-radius-md);
+    object-fit: cover;
+    box-shadow: var(--st-shadow-md);
+    margin-bottom: 20px;
+}
+
+
+.select-showtime-review-item {
+    background: linear-gradient(135deg, rgba(15, 23, 42, 0.6) 0%, rgba(30, 41, 59, 0.4) 100%);
+    border-radius: var(--st-radius-md);
+    padding: 28px;
+    border: 1px solid var(--st-border-color);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+}
+
+.select-showtime-review-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(90deg, #3b82f6, #60a5fa, #3b82f6);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.select-showtime-review-item:hover {
+    background: linear-gradient(135deg, rgba(59, 130, 246, 0.12) 0%, rgba(30, 41, 59, 0.5) 100%);
+    border-color: rgba(59, 130, 246, 0.4);
+    box-shadow: 0 8px 32px rgba(59, 130, 246, 0.25);
+    transform: translateY(-4px);
+}
+
+.select-showtime-review-item:hover::before {
+    transform: scaleX(1);
+}
+
+.select-showtime-review-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 18px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid var(--st-border-color);
+}
+
+.select-showtime-review-author {
+    color: var(--st-text-primary);
+    font-size: 17px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.select-showtime-review-author::before {
+    content: '💬';
+    font-size: 20px;
+}
+
+.select-showtime-review-rating {
+    color: #fbbf24;
+    font-size: 15px;
+    font-weight: 700;
+    background: linear-gradient(135deg, rgba(251, 191, 36, 0.2) 0%, rgba(251, 191, 36, 0.1) 100%);
+    padding: 8px 16px;
+    border-radius: 25px;
+    border: 1px solid rgba(251, 191, 36, 0.3);
+    box-shadow: 0 4px 12px rgba(251, 191, 36, 0.2);
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.select-showtime-review-content {
+    color: var(--st-text-secondary);
+    font-size: 16px;
+    line-height: 1.8;
+    margin: 0;
+    font-style: italic;
+}
+
+.select-showtime-tab-reviews p {
+    text-align: center;
+    padding: 40px;
+    font-style: italic;
+}
+
+/* ========== RESPONSIVE DESIGN ========== */
+@media (max-width: 768px) {
+    .select-showtime-page {
+        padding: 20px 15px;
+    }
+
+    .select-showtime-movie-header h2 {
+        font-size: 24px;
+    }
+
+    .select-showtime-date-buttons {
+        gap: 8px;
+    }
+
+    .select-showtime-date-btn {
+        min-width: 100px;
+        padding: 10px 15px;
+        font-size: 13px;
+    }
+
+    .select-showtime-list {
+        grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+        gap: 12px;
+    }
+
+    .select-showtime-btn {
+        padding: 15px;
+    }
+
+    .select-showtime-time {
+        font-size: 20px;
+    }
+
+    .select-showtime-tab-button {
+        padding: 16px 20px;
+        font-size: 14px;
+        max-width: none;
+    }
+
+    .select-showtime-tab-content {
+        padding: 25px 20px;
+    }
+
+    .select-showtime-tab-panel h3 {
+        font-size: 24px;
+        margin-bottom: 24px;
+    }
+
+    .select-showtime-tab-overview p {
+        font-size: 15px;
+        padding: 20px;
+    }
+
+    .select-showtime-movie-details {
+        grid-template-columns: 1fr;
+        gap: 14px;
+    }
+
+    .select-showtime-movie-details p {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+        padding: 18px 20px;
+    }
+
+    .select-showtime-cast-list li {
+        font-size: 15px;
+        padding: 18px 22px;
+    }
+
+    .select-showtime-review-item {
+        padding: 22px;
+    }
+
+    .select-showtime-review-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+    }
+}
+
+@media (max-width: 480px) {
+    .select-showtime-list {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .select-showtime-tab-button {
+        padding: 14px 16px;
+        font-size: 13px;
+        letter-spacing: 0.3px;
+    }
+
+    .select-showtime-tab-content {
+        padding: 20px 15px;
+        min-height: 300px;
+    }
+
+    .select-showtime-tab-panel h3 {
+        font-size: 20px;
+    }
+}

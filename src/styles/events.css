@@ -1,0 +1,400 @@
+﻿/* Events & Promotions - Navy Dark Theme with Vietnamese-friendly font
+   - Import Be Vietnam Pro (supports Vietnamese)
+   - Scope font only to this page to avoid changing other modules
+*/
+@import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&display=swap');
+
+/* Palette variables (dark) */
+:root {
+  --ev-bg: #ffffff;
+  --ev-surface: #ffffff;
+  --ev-surface-2: #f8fafc;
+  --ev-border: #e5e7eb;
+  --ev-text: #111827;
+  --ev-muted: #6b7280;
+
+  --ev-primary: #60a5fa;
+  --ev-primary-600: #3b82f6;
+  --ev-primary-700: #2563eb;
+
+  --ev-cta: #f97316;
+  --ev-cta-600: #fb923c;
+
+  --ev-success: #22c55e;
+  --ev-danger: #ef4444;
+  --ev-hot: #f43f5e;
+  --ev-badge-bg: rgba(96,165,250,0.12);
+  --ev-shadow: 0 12px 34px rgba(0, 0, 0, 0.45);
+}
+
+/* DARK THEME OVERRIDES (kích hoạt bằng .ev-dark) */
+.ev-dark {
+  --ev-bg: #0b1220;
+  --ev-surface: #121b2b;
+  --ev-surface-2: #0f1626;
+  --ev-border: #233047;
+  --ev-text: #e5e7eb;
+  --ev-muted: #9aa4b2;
+
+  --ev-primary: #60a5fa;
+  --ev-primary-600: #3b82f6;
+  --ev-primary-700: #2563eb;
+
+  --ev-cta: #f97316;
+  --ev-cta-600: #fb923c;
+
+  --ev-success: #22c55e;
+  --ev-danger: #ef4444;
+  --ev-hot: #f43f5e;
+  --ev-badge-bg: rgba(96,165,250,0.12);
+  --ev-shadow: 0 12px 34px rgba(0, 0, 0, 0.45);
+}
+
+/* Page container: áp dụng font chuẩn tiếng Việt + nền gradient như các trang navy */
+.ev-page {
+  padding: 20px;
+  color: var(--ev-text);
+  background: var(--ev-bg);
+  min-height: calc(100vh - 120px);
+
+  /* Đồng bộ phông với Staff/Movie bằng stack hỗ trợ TV:
+     - Be Vietnam Pro (Google Fonts) cho tiếng Việt
+     - Fallback hệ thống: Segoe UI/Roboto/… */
+  font-family:
+    "Be Vietnam Pro",
+    -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Roboto, "Helvetica Neue", Arial,
+    "Noto Sans", "Noto Sans Vietnamese",
+    "Apple Color Emoji", "Segoe UI Emoji",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.ev-page.ev-dark {
+  background: linear-gradient(135deg, #0f2847 0%, #1a3a5c 100%);
+}
+
+/* Kế thừa font cho toàn bộ phần tử trong trang Events */
+.ev-page * { font-family: inherit; }
+
+/* Header khu vực trang */
+.ev-page-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 18px;
+  padding: 14px 16px;
+  border-radius: 14px;
+  border: 1px solid var(--ev-border);
+  box-shadow: var(--ev-shadow);
+  background:
+    radial-gradient(1200px 200px at -10% -60%, rgba(96,165,250,0.08), transparent 60%),
+    radial-gradient(1200px 200px at 110% -60%, rgba(251,146,60,0.08), transparent 60%),
+    var(--ev-surface);
+}
+
+.ev-title {
+  margin: 0;
+  font-size: 22px;
+  font-weight: 800;
+  letter-spacing: 0; /* đồng bộ */
+  color: var(--ev-text);
+}
+
+.ev-subtitle {
+  color: var(--ev-muted);
+  font-size: 13px;
+  margin-top: 4px;
+}
+
+/* Banner trạng thái */
+.ev-banner {
+  padding: 10px 12px;
+  border-radius: 12px;
+  margin: 12px 0 16px;
+  font-weight: 700;
+  border: 1px solid transparent;
+}
+.ev-banner-success {
+  background: rgba(34,197,94,0.12);
+  color: #bbf7d0;
+  border-color: rgba(34,197,94,0.28);
+}
+.ev-banner-error {
+  background: rgba(239,68,68,0.12);
+  color: #fecaca;
+  border-color: rgba(239,68,68,0.28);
+}
+
+/* Card */
+.ev-card {
+  background: var(--ev-surface);
+  border: 1px solid var(--ev-border);
+  border-radius: 16px;
+  box-shadow: var(--ev-shadow);
+  overflow: hidden;
+}
+.ev-card + .ev-card { margin-top: 16px; }
+
+.ev-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 16px;
+  border-bottom: 1px solid var(--ev-border);
+  background:
+    linear-gradient(135deg, rgba(96,165,250,0.08) 0%, rgba(59,130,246,0.05) 100%),
+    var(--ev-surface);
+}
+.ev-card-title {
+  font-weight: 800;
+  color: var(--ev-text);
+}
+.ev-card-form {
+  padding: 12px 16px 16px;
+}
+.ev-meta {
+  color: var(--ev-muted);
+  font-size: 12px;
+  font-weight: 600;
+}
+
+/* Table */
+.ev-table-wrap { width: 100%; overflow: auto; }
+.ev-table {
+  width: 100%;
+  border-collapse: collapse;
+  color: var(--ev-text);
+}
+.ev-table th, .ev-table td {
+  padding: 12px 14px;
+  border-bottom: 1px solid var(--ev-border);
+  text-align: left;
+}
+.ev-table thead th {
+  background: linear-gradient(180deg, rgba(37,99,235,0.22), rgba(37,99,235,0.12));
+  color: #e6f0ff;
+  font-size: 12.5px;
+  font-weight: 800;
+  border-bottom: 1px solid var(--ev-border);
+  letter-spacing: 0;
+}
+.ev-table tbody tr { background: rgba(255,255,255,0.02); }
+.ev-table tbody tr:hover { background: rgba(59,130,246,0.08); }
+.ev-cell-strong { font-weight: 800; }
+
+/* Empty/Alert */
+.ev-empty { padding: 22px; color: var(--ev-muted); }
+.ev-alert {
+  padding: 12px 14px;
+  border-radius: 12px;
+  border: 1px solid var(--ev-border);
+  background: rgba(255,255,255,0.02);
+  color: var(--ev-text);
+}
+.ev-alert-error {
+  border-color: rgba(239,68,68,0.35);
+  background: rgba(239,68,68,0.08);
+  color: #fecaca;
+}
+
+/* Buttons */
+.ev-btn {
+  height: 38px;
+  padding: 0 16px;
+  border-radius: 10px;
+  border: 1px solid var(--ev-border);
+  background: rgba(255,255,255,0.04);
+  color: var(--ev-text);
+  cursor: pointer;
+  font-weight: 800;
+  transition: transform .15s ease, filter .15s ease, box-shadow .15s ease;
+}
+.ev-btn:hover { transform: translateY(-1px); filter: brightness(1.06); }
+.ev-btn:active { transform: translateY(0); }
+.ev-btn:disabled { opacity: 0.6; cursor: not-allowed; }
+
+.ev-btn-primary {
+  background: linear-gradient(180deg, var(--ev-cta-600), var(--ev-cta));
+  color: #1b0b05;
+  border-color: rgba(249,115,22,0.65);
+  box-shadow:
+    0 10px 24px rgba(249,115,22,0.25),
+    inset 0 1px 0 rgba(255,255,255,0.2);
+}
+.ev-btn-primary:hover {
+  filter: brightness(1.03);
+  box-shadow:
+    0 12px 28px rgba(251,146,60,0.28),
+    inset 0 1px 0 rgba(255,255,255,0.25);
+}
+
+.ev-btn-danger {
+  background: rgba(239,68,68,0.12);
+  color: #fecaca;
+  border-color: rgba(239,68,68,0.35);
+  margin-left: 8px;
+}
+.ev-btn-danger:hover { background: rgba(239,68,68,0.18); }
+
+.ev-btn-ghost {
+  background: transparent;
+  border-color: var(--ev-border);
+  color: var(--ev-text);
+}
+.ev-btn-ghost:hover { background: rgba(255,255,255,0.03); }
+
+/* Form */
+.ev-form { display: block; }
+.ev-form-grid {
+  display: grid;
+  gap: 14px;
+  grid-template-columns: repeat(12, 1fr);
+}
+.ev-form-field {
+  grid-column: span 6;
+  display: flex;
+  flex-direction: column;
+}
+.ev-form-field:nth-child(2) { grid-column: span 12; }
+
+.ev-label {
+  font-size: 12.5px;
+  color: #cbd5e1;
+  margin-bottom: 6px;
+  font-weight: 800;
+  letter-spacing: 0;
+}
+
+.ev-input, .ev-textarea {
+  border: 1px solid var(--ev-border);
+  border-radius: 12px;
+  padding: 10px 12px;
+  font-size: 14px;
+  outline: none;
+  background: #0f1626;
+  color: var(--ev-text);
+  transition: box-shadow .15s ease, border-color .15s ease, background .15s ease;
+}
+.ev-input:focus, .ev-textarea:focus {
+  border-color: var(--ev-primary-600);
+  box-shadow: 0 0 0 3px rgba(59,130,246,0.25);
+  background: #101a2c;
+}
+.ev-input-error { border-color: rgba(239,68,68,0.6); }
+.ev-hint { color: var(--ev-muted); font-size: 12px; margin-top: 6px; }
+.ev-error { color: #fecaca; font-size: 12px; margin-top: 6px; }
+
+/* Discount percent controls */
+.ev-percent-row { display: flex; gap: 10px; align-items: center; }
+.ev-input-percent { width: 120px; }
+.ev-range { flex: 1; accent-color: var(--ev-primary-600); }
+
+/* Meter bar */
+.ev-meter {
+  position: relative;
+  height: 8px;
+  background: #0f1626;
+  border-radius: 999px;
+  margin-top: 10px;
+  border: 1px solid var(--ev-border);
+}
+.ev-meter-bar {
+  height: 100%;
+  border-radius: 999px;
+  background:
+    linear-gradient(90deg, #22c55e 0%, #84cc16 40%, #f59e0b 70%, #ef4444 100%);
+  transition: width .2s ease;
+}
+.ev-meter-text {
+  position: absolute;
+  top: -22px;
+  right: 0;
+  font-size: 12px;
+  color: var(--ev-muted);
+  font-weight: 700;
+}
+
+/* Actions row */
+.ev-actions { margin-top: 14px; display: flex; gap: 8px; }
+
+/* Bell / Dropdown (nếu dùng ở header) */
+.ev-bell-wrap { position: relative; margin-right: 12px; }
+.ev-bell-btn {
+  background: transparent;
+  border: 1px solid transparent;
+  cursor: pointer;
+  position: relative;
+  padding: 6px 8px;
+  border-radius: 10px;
+  color: var(--ev-text);
+}
+.ev-bell-btn:hover { background: rgba(255,255,255,0.06); }
+.ev-bell-icon { font-size: 18px; }
+.ev-bell-dot {
+  position: absolute; top: 4px; right: 4px;
+  width: 10px; height: 10px; border-radius: 50%;
+  background: #ef4444;
+  box-shadow: 0 0 0 2px #0b1220;
+}
+
+.ev-dropdown {
+  position: absolute;
+  right: 0; top: 40px;
+  width: 360px; max-height: 420px; overflow: auto;
+  background: var(--ev-surface);
+  border: 1px solid var(--ev-border);
+  border-radius: 14px; box-shadow: var(--ev-shadow);
+  z-index: 1000;
+}
+.ev-dropdown-header {
+  padding: 12px 14px;
+  border-bottom: 1px solid var(--ev-border);
+  font-weight: 800;
+  color: var(--ev-text);
+  background:
+    linear-gradient(135deg, rgba(59,130,246,0.08) 0%, rgba(37,99,235,0.05) 100%),
+    var(--ev-surface);
+  letter-spacing: 0;
+}
+.ev-list { padding: 6px 0; }
+.ev-item { padding: 10px 12px; border-bottom: 1px solid rgba(255,255,255,0.06); }
+.ev-item:last-child { border-bottom: none; }
+.ev-item-title { font-weight: 800; color: var(--ev-text); }
+.ev-item-desc { color: var(--ev-muted); margin-top: 4px; }
+.ev-item-meta {
+  display: flex; gap: 10px; align-items: center;
+  font-size: 12px; color: var(--ev-muted); margin-top: 6px;
+}
+
+/* Badge giảm giá */
+.ev-badge {
+  display: inline-block;
+  padding: 4px 8px;
+  border-radius: 999px;
+  background: var(--ev-badge-bg);
+  color: #dbeafe;
+  font-weight: 800;
+  font-size: 12px;
+  border: 1px solid rgba(96,165,250,0.28);
+}
+.ev-badge-hot {
+  background: rgba(244,63,94,0.18);
+  color: #fecdd3;
+  border-color: rgba(244,63,94,0.28);
+}
+
+/* Skeleton */
+.ev-skeleton { display: grid; gap: 10px; }
+.ev-skeleton-line {
+  height: 14px;
+  border-radius: 8px;
+  background: linear-gradient(90deg,#1a2538 25%, #26344d 37%, #1a2538 63%);
+  background-size: 400% 100%;
+  animation: ev-shimmer 1.2s infinite;
+}
+@keyframes ev-shimmer {
+  0% { background-position: 100% 0; }
+  100% { background-position: 0 0; }
+}

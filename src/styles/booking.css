@@ -1,0 +1,249 @@
+﻿/* src/styles/booking.css */
+
+.booking-page {
+    background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+    color: #f1f5f9;
+    min-height: calc(100vh - 120px);
+    padding: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.booking-status {
+    text-align: center;
+    font-size: 1.5rem;
+    padding-top: 5rem;
+    color: #f1f5f9;
+}
+
+    .booking-status.error {
+        color: #ef4444;
+    }
+
+.booking-container {
+    display: flex;
+    width: 100%;
+    max-width: 1200px;
+    background-color: #1e293b;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    overflow: hidden;
+}
+
+.movie-summary {
+    width: 320px;
+    background-color: #0f172a;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.summary-poster {
+    width: 100%;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+    object-fit: cover;
+    height: auto; 
+}
+
+.summary-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    color: #3b82f6;
+}
+
+.summary-info {
+    font-size: 0.9rem;
+    color: #cbd5e1;
+    margin-bottom: 0.25rem;
+}
+
+.summary-details {
+    padding: 1rem 0;
+    margin: 0.5rem 0;
+    border-top: 1px solid #374151;
+    border-bottom: 1px solid #374151;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.detail-item {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    font-size: 0.9rem;
+    color: #cbd5e1;
+}
+
+.age-rating-badge {
+    background-color: #ef4444;
+    color: white;
+    padding: 2px 8px;
+    border-radius: 5px;
+    font-size: 0.8rem;
+    font-weight: bold;
+}
+
+.summary-total {
+    margin-top: auto;
+    padding-top: 1rem;
+}
+
+    .summary-total h4 {
+        color: #9ca3af;
+        font-size: 0.9rem;
+        margin-bottom: 0.25rem;
+    }
+
+    .summary-total p {
+        font-size: 1.8rem;
+        font-weight: bold;
+        color: #ffcc02;
+    }
+
+/* Xóa nút payment ở đây */
+/* .payment-button { ... } */
+
+/* === CỘT CHÍNH === */
+.booking-details {
+    flex: 1;
+    padding: 1.5rem 2rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.booking-header {
+    margin-bottom: 1.5rem;
+}
+
+.back-button {
+    display: inline-flex;
+    align-items: center;
+    background: none;
+    border: none;
+    color: #9ca3af;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: color 0.2s;
+}
+
+    .back-button:hover {
+        color: #f1f5f9;
+    }
+
+.booking-tabs {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 2px solid #374151;
+    margin-bottom: 1.5rem;
+}
+
+.tab-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: #64748b;
+    padding-bottom: 1rem;
+    font-weight: 600;
+    flex-grow: 1;
+    justify-content: center;
+    transition: color 0.3s ease;
+}
+
+    .tab-item.active {
+        color: #3b82f6;
+    }
+
+.tab-content-container {
+    flex-grow: 1;
+}
+
+/* === NỘI DUNG TAB TRỐNG === */
+.tab-content.empty {
+    display: flex;
+    flex-direction: column; /* Để nội dung payment xuống dòng */
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    min-height: 300px;
+    color: #64748b;
+    font-style: italic;
+    gap: 1rem; /* Khoảng cách cho nội dung payment */
+}
+
+/* === STYLE CHO TAB PAYMENT CÓ NÚT THANH TOÁN === */
+.payment-tab-content {
+    font-style: normal; /* Bỏ italic */
+    color: #f1f5f9;
+}
+
+    .payment-tab-content strong {
+        font-size: 1.4rem;
+        color: #ffcc02;
+    }
+
+    .payment-tab-content .payment-note {
+        font-size: 0.9rem;
+        color: #9ca3af;
+        margin-top: 0.5rem;
+    }
+
+.final-payment-button {
+    background-color: #3b82f6;
+    color: white;
+    border: none;
+    padding: 0.75rem 1.5rem; /* Tăng padding */
+    font-size: 1.1rem; /* Tăng cỡ chữ */
+    font-weight: bold;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-top: 1.5rem; /* Tăng margin top */
+    transition: background-color 0.2s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+    max-width: 300px; /* Giới hạn độ rộng */
+}
+
+    .final-payment-button:hover {
+        background-color: #2563eb;
+    }
+
+
+/* === NÚT ĐIỀU HƯỚNG NEXT/BACK === */
+.tab-navigation {
+    margin-top: auto;
+    padding-top: 1.5rem;
+    border-top: 1px solid #374151;
+    display: flex;
+    justify-content: space-between;
+}
+
+    .tab-navigation button {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 0.6rem 1.2rem;
+        border-radius: 8px;
+        border: 1px solid #475569;
+        background-color: transparent;
+        color: #f1f5f9;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.2s;
+    }
+
+        .tab-navigation button:not(:disabled):hover {
+            background-color: #374151;
+            border-color: #374151;
+        }
+
+        .tab-navigation button:disabled {
+            opacity: 0.4;
+            cursor: not-allowed;
+        }

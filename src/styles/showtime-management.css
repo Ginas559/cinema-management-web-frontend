@@ -1,0 +1,661 @@
+/* Showtime Management - Navy Theme */
+
+.showtime-management-container {
+  padding: 24px;
+  background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+  min-height: 100vh;
+  color: #e2e8f0;
+}
+
+/* Header */
+.showtime-management-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 32px;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.showtime-management-title {
+  font-size: 32px;
+  font-weight: 700;
+  color: #f1f5f9;
+  margin: 0;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.showtime-management-controls {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.showtime-management-select {
+  padding: 10px 16px;
+  border-radius: 8px;
+  border: 1px solid #334155;
+  background: #1e293b;
+  color: #e2e8f0;
+  font-size: 14px;
+  min-width: 200px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.showtime-management-select:hover {
+  border-color: #475569;
+  background: #334155;
+}
+
+.showtime-management-select:focus {
+  outline: none;
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+.showtime-management-view-toggle {
+  display: flex;
+  background: #1e293b;
+  border-radius: 8px;
+  padding: 4px;
+  border: 1px solid #334155;
+}
+
+.showtime-management-toggle-btn {
+  padding: 8px 16px;
+  border: none;
+  background: transparent;
+  color: #94a3b8;
+  cursor: pointer;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 500;
+  transition: all 0.2s;
+}
+
+.showtime-management-toggle-btn:hover {
+  color: #e2e8f0;
+  background: #334155;
+}
+
+.showtime-management-toggle-btn-active {
+  background: #3b82f6;
+  color: white;
+}
+
+.showtime-management-btn-auto-schedule {
+  padding: 10px 20px;
+  background: linear-gradient(135deg, #8b5cf6 0%, #6366f1 100%);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 14px;
+  transition: all 0.2s;
+  box-shadow: 0 2px 8px rgba(139, 92, 246, 0.3);
+}
+
+.showtime-management-btn-auto-schedule:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(139, 92, 246, 0.4);
+}
+
+.showtime-management-btn-create {
+  padding: 10px 20px;
+  background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 14px;
+  transition: all 0.2s;
+  box-shadow: 0 2px 8px rgba(59, 130, 246, 0.3);
+}
+
+.showtime-management-btn-create:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.4);
+}
+
+/* Error & Loading */
+.showtime-management-error {
+  padding: 16px;
+  background: rgba(239, 68, 68, 0.1);
+  border: 1px solid rgba(239, 68, 68, 0.3);
+  border-radius: 8px;
+  color: #fca5a5;
+  margin-bottom: 20px;
+}
+
+.showtime-management-loading {
+  text-align: center;
+  padding: 60px 20px;
+  font-size: 18px;
+  color: #94a3b8;
+}
+
+/* Date Selector */
+.showtime-management-date-selector {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 24px;
+  overflow-x: auto;
+  padding: 8px 0;
+}
+
+.showtime-management-date-btn {
+  min-width: 100px;
+  padding: 12px 16px;
+  background: #1e293b;
+  border: 1px solid #334155;
+  border-radius: 8px;
+  color: #94a3b8;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 500;
+  transition: all 0.2s;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+
+.showtime-management-date-btn:hover {
+  background: #334155;
+  color: #e2e8f0;
+  border-color: #475569;
+}
+
+.showtime-management-date-btn-active {
+  background: #3b82f6;
+  color: white;
+  border-color: #3b82f6;
+}
+
+.showtime-management-date-btn-date {
+  font-size: 20px;
+  font-weight: 700;
+}
+
+/* Timeline */
+.showtime-management-timeline-container {
+  background: #1e293b;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+.showtime-management-time-header {
+  display: flex;
+  background: #0f172a;
+  border-bottom: 2px solid #334155;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.showtime-management-room-label {
+  width: 150px;
+  padding: 16px;
+  font-weight: 700;
+  color: #f1f5f9;
+  border-right: 1px solid #334155;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.showtime-management-time-grid {
+  flex: 1;
+  display: flex;
+  position: relative;
+}
+
+.showtime-management-time-label {
+  flex: 1;
+  padding: 16px 8px;
+  text-align: center;
+  font-size: 12px;
+  font-weight: 600;
+  color: #94a3b8;
+  border-right: 1px solid #334155;
+}
+
+.showtime-management-time-label:last-child {
+  border-right: none;
+}
+
+.showtime-management-timeline-body {
+  max-height: 600px;
+  overflow-y: auto;
+}
+
+.showtime-management-timeline-row {
+  display: flex;
+  border-bottom: 1px solid #334155;
+  min-height: 80px;
+}
+
+.showtime-management-timeline-row:last-child {
+  border-bottom: none;
+}
+
+.showtime-management-room-cell {
+  width: 150px;
+  padding: 16px;
+  border-right: 1px solid #334155;
+  background: #0f172a;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.showtime-management-room-name {
+  font-weight: 700;
+  color: #f1f5f9;
+  margin-bottom: 4px;
+}
+
+.showtime-management-room-capacity {
+  font-size: 12px;
+  color: #64748b;
+}
+
+.showtime-management-timeline-track {
+  flex: 1;
+  position: relative;
+  padding: 8px 0;
+}
+
+.showtime-management-grid-line {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  background: #334155;
+  opacity: 0.3;
+}
+
+.showtime-management-showtime-block {
+  position: absolute;
+  top: 8px;
+  bottom: 8px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.showtime-management-showtime-block:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+.showtime-management-showtime-content {
+  flex: 1;
+  min-width: 0;
+}
+
+.showtime-management-showtime-title {
+  font-weight: 700;
+  font-size: 13px;
+  color: white;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-bottom: 2px;
+}
+
+.showtime-management-showtime-time {
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.9);
+  margin-bottom: 2px;
+}
+
+.showtime-management-showtime-lang {
+  font-size: 10px;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.showtime-management-delete-btn {
+  background: rgba(0, 0, 0, 0.3);
+  border: none;
+  color: white;
+  width: 24px;
+  height: 24px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 8px;
+  flex-shrink: 0;
+  transition: all 0.2s;
+}
+
+.showtime-management-delete-btn:hover {
+  background: rgba(239, 68, 68, 0.8);
+}
+
+.showtime-management-empty-track {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #475569;
+  font-size: 13px;
+  font-style: italic;
+}
+
+.showtime-management-empty-state {
+  text-align: center;
+  padding: 60px 20px;
+  color: #64748b;
+  font-size: 16px;
+  font-style: italic;
+}
+
+/* Table View */
+.showtime-management-table-container {
+  background: #1e293b;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+.showtime-management-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.showtime-management-th {
+  padding: 16px;
+  text-align: left;
+  background: #0f172a;
+  color: #f1f5f9;
+  font-weight: 700;
+  font-size: 14px;
+  border-bottom: 2px solid #334155;
+}
+
+.showtime-management-tr:hover {
+  background: #334155;
+}
+
+.showtime-management-td {
+  padding: 16px;
+  border-bottom: 1px solid #334155;
+  color: #cbd5e1;
+  font-size: 14px;
+}
+
+.showtime-management-movie-info {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.showtime-management-duration {
+  color: #64748b;
+  font-size: 12px;
+}
+
+.showtime-management-lang-badge {
+  display: inline-block;
+  padding: 4px 12px;
+  background: rgba(59, 130, 246, 0.2);
+  color: #93c5fd;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.showtime-management-action-btns {
+  display: flex;
+  gap: 8px;
+}
+
+.showtime-management-btn-edit {
+  padding: 6px 16px;
+  background: #3b82f6;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 600;
+  transition: all 0.2s;
+}
+
+.showtime-management-btn-edit:hover {
+  background: #2563eb;
+  transform: translateY(-1px);
+}
+
+.showtime-management-btn-delete {
+  padding: 6px 16px;
+  background: #dc2626;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 600;
+  transition: all 0.2s;
+}
+
+.showtime-management-btn-delete:hover {
+  background: #b91c1c;
+  transform: translateY(-1px);
+}
+
+/* Modal */
+.showtime-management-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  backdrop-filter: blur(4px);
+}
+
+.showtime-management-modal-content {
+  background: #1e293b;
+  border-radius: 16px;
+  width: 90%;
+  max-width: 600px;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+  border: 1px solid #334155;
+}
+
+.showtime-management-modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 24px;
+  border-bottom: 1px solid #334155;
+  background: #0f172a;
+}
+
+.showtime-management-modal-title {
+  font-size: 24px;
+  font-weight: 700;
+  color: #f1f5f9;
+  margin: 0;
+}
+
+.showtime-management-btn-close {
+  background: none;
+  border: none;
+  color: #94a3b8;
+  font-size: 32px;
+  cursor: pointer;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  transition: all 0.2s;
+}
+
+.showtime-management-btn-close:hover {
+  background: #334155;
+  color: #f1f5f9;
+}
+
+.showtime-management-form {
+  padding: 24px;
+}
+
+.showtime-management-form-group {
+  margin-bottom: 20px;
+}
+
+.showtime-management-label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 600;
+  color: #e2e8f0;
+  font-size: 14px;
+}
+
+.showtime-management-input {
+  width: 100%;
+  padding: 12px 16px;
+  border: 1px solid #334155;
+  border-radius: 8px;
+  background: #0f172a;
+  color: #e2e8f0;
+  font-size: 14px;
+  transition: all 0.2s;
+  box-sizing: border-box;
+}
+
+.showtime-management-input:focus {
+  outline: none;
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+.showtime-management-hint {
+  display: block;
+  margin-top: 6px;
+  color: #64748b;
+  font-size: 12px;
+  font-style: italic;
+}
+
+/*.showtime-management-slider {
+  width: 100%;
+  height: 6px;
+  border-radius: 3px;
+  background: #334155;
+  outline: none;
+  appearance: none;
+  -webkit-appearance: none;
+}*/
+
+/*.showtime-management-slider::-webkit-slider-thumb {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #3b82f6;
+  cursor: pointer;
+  box-shadow: 0 2px 6px rgba(59, 130, 246, 0.4);
+}*/
+
+/*.showtime-management-slider::-moz-range-thumb {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #3b82f6;
+  cursor: pointer;
+  border: none;
+  box-shadow: 0 2px 6px rgba(59, 130, 246, 0.4);
+}*/
+
+.showtime-management-modal-footer {
+  display: flex;
+  gap: 12px;
+  justify-content: flex-end;
+  padding-top: 24px;
+  border-top: 1px solid #334155;
+}
+
+.showtime-management-btn-cancel {
+  padding: 12px 24px;
+  background: #334155;
+  color: #e2e8f0;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 14px;
+  transition: all 0.2s;
+}
+
+.showtime-management-btn-cancel:hover {
+  background: #475569;
+}
+
+.showtime-management-btn-submit {
+  padding: 12px 24px;
+  background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 14px;
+  transition: all 0.2s;
+  box-shadow: 0 2px 8px rgba(59, 130, 246, 0.3);
+}
+
+.showtime-management-btn-submit:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.4);
+}
+
+/* Scrollbar Styling */
+.showtime-management-timeline-body::-webkit-scrollbar,
+.showtime-management-modal-content::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+.showtime-management-timeline-body::-webkit-scrollbar-track,
+.showtime-management-modal-content::-webkit-scrollbar-track {
+  background: #0f172a;
+}
+
+.showtime-management-timeline-body::-webkit-scrollbar-thumb,
+.showtime-management-modal-content::-webkit-scrollbar-thumb {
+  background: #334155;
+  border-radius: 4px;
+}
+
+.showtime-management-timeline-body::-webkit-scrollbar-thumb:hover,
+.showtime-management-modal-content::-webkit-scrollbar-thumb:hover {
+  background: #475569;
+}

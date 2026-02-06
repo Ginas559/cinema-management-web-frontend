@@ -1,0 +1,176 @@
+/* Header Container */
+.cinema-header {
+  display: grid;
+  grid-template-columns: auto 1fr auto; /* trái – giữa – phải */
+  align-items: center;
+  padding: 0.75rem 1.5rem;
+  background-color: #1f2937;
+  color: #fff;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+  position: sticky;
+  top: 0;
+  z-index: 999;
+}
+
+/* Left Section */
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+/* Logo */
+.logo {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #3b82f6;
+  cursor: pointer;
+}
+
+.icon img {
+  height: 40px;
+  width: auto;
+  object-fit: contain;
+  display: flex;
+}
+
+/* Center Nav */
+.header-center {
+  display: flex;
+  justify-content: center; 
+}
+
+.nav-container {
+  display: flex;
+  gap: 1rem;
+}
+
+.nav-menu {
+  display: flex;
+  gap: 1rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* Right Auth Section */
+.header-right {
+  display: flex;
+  justify-content: flex-end; 
+  gap: 0.5rem;
+}
+
+
+/* Logo */
+.logo {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #3b82f6;
+  cursor: pointer;
+}
+
+/* Navigation Menu */
+.nav-container {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin: 0 auto;
+}
+
+.nav-menu {
+  display: flex;
+  gap: 1rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-item {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.5rem 0.75rem;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+  border-radius: 8px;
+  transition: background 0.2s, color 0.2s;
+}
+
+.nav-item:hover {
+  background-color: #3b82f6;
+  color: #fff;
+}
+
+.nav-icon {
+  width: 18px;
+  height: 18px;
+}
+
+/* Auth Buttons (Login/Register) */
+.header-auth-buttons {
+  display: flex;
+  gap: 0.5rem;
+  margin-left: auto;
+}
+
+.header-auth-btn {
+  padding: 0.4rem 0.8rem;
+  border-radius: 8px;
+  border: 1px solid #3b82f6;
+  background-color: transparent;
+  color: #3b82f6;
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.2s;
+}
+
+.header-auth-btn:hover {
+  background-color: #3b82f6;
+  color: #fff;
+}
+
+.header-auth-btn.primary {
+  background-color: #3b82f6;
+  color: #fff;
+}
+
+.header-auth-btn.primary:hover {
+  background-color: #2563eb;
+}
+
+/* User Info Section */
+.user-info {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.user-welcome {
+  font-weight: 500;
+}
+
+.logout-btn {
+  padding: 0.35rem 0.75rem;
+  background-color: #ef4444;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background 0.2s;
+}
+
+.logout-btn:hover {
+  background-color: #dc2626;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .nav-menu {
+    display: none; 
+  }
+  .nav-container {
+    gap: 0.5rem;
+  }
+}

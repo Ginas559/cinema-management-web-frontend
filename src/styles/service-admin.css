@@ -1,0 +1,27 @@
+.service-table {
+  max-height: 400px;
+  overflow-y: auto;
+}
+
+.table-hover tbody tr:hover {
+  background-color: #f1f5f9 !important;
+}
+
+.card-header input {
+  font-size: 14px;
+}
+
+.btn-warning {
+  color: white !important;
+}
+
+.card {
+  border-radius: 12px;
+}
+
+.table-primary th {
+  position: sticky;
+  top: 0;
+  background-color: #3b82f6 !important;
+  color: white;
+}

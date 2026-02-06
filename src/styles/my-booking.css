@@ -1,0 +1,220 @@
+﻿/* 🎬 My Booking Styles */
+.bill-list {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 20px;
+    background: #fafafa;
+    border-radius: 16px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    font-family: "Poppins", sans-serif;
+}
+
+/* Header Section */
+.bill-header-section {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.bill-title {
+    font-size: 28px;
+    font-weight: 700;
+    color: #222;
+}
+
+.bill-subtitle {
+    color: #777;
+    font-size: 16px;
+}
+
+/* Loading & Error */
+.bill-loading, .bill-error, .bill-empty {
+    text-align: center;
+    padding: 60px 0;
+}
+
+.spinner {
+    width: 40px;
+    height: 40px;
+    border: 4px solid #ddd;
+    border-top: 4px solid #2196f3;
+    border-radius: 50%;
+    margin: 0 auto 16px;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.retry-button {
+    background: #2196f3;
+    color: #fff;
+    border: none;
+    padding: 10px 18px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+    .retry-button:hover {
+        background: #1976d2;
+    }
+
+/* Bill Cards */
+.bills-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.bill-item {
+    background: #fff;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    transition: 0.2s;
+}
+
+    .bill-item:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+    }
+
+/* Bill Header */
+.bill-header {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 10px;
+    margin-bottom: 12px;
+}
+
+.bill-movie-title {
+    font-size: 20px;
+    font-weight: 600;
+    color: #333;
+}
+
+.bill-date {
+    color: #777;
+    font-size: 14px;
+}
+
+.bill-amount {
+    font-size: 18px;
+    font-weight: bold;
+    color: #2e7d32;
+}
+
+.bill-payment-badge {
+    background: #e3f2fd;
+    color: #1976d2;
+    padding: 4px 8px;
+    border-radius: 8px;
+    font-size: 13px;
+    text-align: center;
+}
+
+/* Bill Details */
+.bill-info-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 4px 0;
+}
+
+.label {
+    color: #555;
+    font-weight: 500;
+}
+
+.value {
+    color: #222;
+    font-weight: 600;
+}
+
+.seats-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+}
+
+.seat-badge {
+    background: #f0f4c3;
+    color: #827717;
+    border-radius: 8px;
+    padding: 4px 8px;
+    font-size: 13px;
+    font-weight: 500;
+}
+
+/* Services Section */
+.bill-services {
+    margin-top: 10px;
+    padding-top: 10px;
+    border-top: 1px dashed #ddd;
+}
+
+.services-header {
+    font-weight: 600;
+    margin-bottom: 6px;
+}
+
+.services-list {
+    list-style: none;
+    padding-left: 0;
+}
+
+.service-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 3px 0;
+}
+
+.service-qty {
+    color: #888;
+    font-weight: 400;
+    margin-left: 4px;
+}
+
+.service-price {
+    font-weight: 600;
+    color: #2e7d32;
+}
+
+/* Footer */
+.bill-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 12px;
+    padding-top: 10px;
+    border-top: 1px solid #eee;
+}
+
+.print-button {
+    background: #f57c00;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: 8px 14px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: 0.2s;
+}
+
+    .print-button:hover {
+        background: #e65100;
+    }
+
+.bill-ids {
+    font-size: 12px;
+    color: #888;
+}
+
+/* Empty state */
+.empty-icon {
+    font-size: 40px;
+    margin-bottom: 10px;
+}

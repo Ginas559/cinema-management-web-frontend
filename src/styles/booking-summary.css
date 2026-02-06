@@ -1,0 +1,20 @@
+.booking-summary-container {
+    max-width: 1000px;
+    margin: 30px auto;
+    padding: 20px;
+}
+
+.booking-summary-card {
+    border-radius: 16px;
+    background-color: #fdfdfd;
+}
+
+.booking-section {
+    margin-bottom: 2rem;
+}
+
+.section-title {
+    border-bottom: 2px solid #dee2e6;
+    padding-bottom: 8px;
+    margin-bottom: 12px;
+}

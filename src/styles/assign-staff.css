@@ -1,0 +1,370 @@
+/* Overlay */
+.assign-staff-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  animation: fadeIn 0.2s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Modal */
+.assign-staff-modal {
+  background: white;
+  border-radius: 16px;
+  width: 90%;
+  max-width: 900px;
+  max-height: 85vh;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+  animation: slideUp 0.3s ease;
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Header */
+.assign-staff-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 24px;
+  border-bottom: 2px solid #e0e0e0;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border-radius: 16px 16px 0 0;
+}
+
+.assign-staff-header h2 {
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.assign-staff-close-btn {
+  background: rgba(255, 255, 255, 0.2);
+  border: none;
+  color: white;
+  font-size: 1.5rem;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s;
+}
+
+.assign-staff-close-btn:hover {
+  background: rgba(255, 255, 255, 0.3);
+  transform: rotate(90deg);
+}
+
+/* Shift Info */
+.assign-staff-shift-info {
+  padding: 16px 24px;
+  background: #f8f9fa;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.assign-staff-info-row {
+  display: flex;
+  margin-bottom: 8px;
+  font-size: 0.95rem;
+}
+
+.assign-staff-info-row:last-child {
+  margin-bottom: 0;
+}
+
+.assign-staff-info-label {
+  font-weight: 600;
+  color: #555;
+  min-width: 80px;
+}
+
+.assign-staff-info-value {
+  color: #333;
+  font-weight: 500;
+}
+
+/* Search */
+.assign-staff-search {
+  padding: 16px 24px;
+  background: white;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.assign-staff-search-input {
+  width: 100%;
+  padding: 12px 16px;
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: all 0.2s;
+}
+
+.assign-staff-search-input:focus {
+  outline: none;
+  border-color: #667eea;
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+/* Body */
+.assign-staff-body {
+  flex: 1;
+  overflow-y: auto;
+  padding: 16px 24px;
+  min-height: 300px;
+}
+
+/* Loading, Error, Empty */
+.assign-staff-loading,
+.assign-staff-error,
+.assign-staff-empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+  text-align: center;
+}
+
+.assign-staff-spinner {
+  width: 40px;
+  height: 40px;
+  border: 4px solid #f3f3f3;
+  border-top: 4px solid #667eea;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin-bottom: 16px;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.assign-staff-error p {
+  color: #d32f2f;
+  font-size: 1rem;
+}
+
+.assign-staff-empty p {
+  color: #757575;
+  font-size: 1rem;
+}
+
+/* Table */
+.assign-staff-table-container {
+  overflow-x: auto;
+  border-radius: 8px;
+  border: 1px solid #e0e0e0;
+}
+
+.assign-staff-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+}
+
+.assign-staff-table thead {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+}
+
+.assign-staff-table th {
+  padding: 14px 16px;
+  text-align: left;
+  font-weight: 600;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.assign-staff-table tbody tr {
+  border-bottom: 1px solid #e0e0e0;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.assign-staff-table tbody tr:hover {
+  background: #f5f5f5;
+}
+
+.assign-staff-table tbody tr:last-child {
+  border-bottom: none;
+}
+
+.assign-staff-row-selected {
+  background: #e8eaf6 !important;
+}
+
+.assign-staff-row-selected:hover {
+  background: #c5cae9 !important;
+}
+
+.assign-staff-table td {
+  padding: 14px 16px;
+  font-size: 0.95rem;
+}
+
+.assign-staff-select-cell {
+  width: 50px;
+  text-align: center;
+}
+
+.assign-staff-select-cell input[type="radio"] {
+  width: 18px;
+  height: 18px;
+  cursor: pointer;
+  accent-color: #667eea;
+}
+
+.assign-staff-name {
+  font-weight: 600;
+  color: #333;
+}
+
+.assign-staff-email {
+  color: #666;
+}
+
+.assign-staff-phone {
+  color: #666;
+}
+
+.assign-staff-position-badge {
+  display: inline-block;
+  padding: 4px 12px;
+  background: #e3f2fd;
+  color: #1976d2;
+  border-radius: 12px;
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+/* Selected Info */
+.assign-staff-selected-info {
+  margin-top: 16px;
+  padding: 12px 16px;
+  background: #e8f5e9;
+  border: 1px solid #a5d6a7;
+  border-radius: 8px;
+  color: #2e7d32;
+}
+
+.assign-staff-selected-info p {
+  margin: 0;
+  font-size: 0.95rem;
+}
+
+.assign-staff-selected-info strong {
+  font-weight: 600;
+}
+
+/* Actions */
+.assign-staff-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  padding: 16px 24px;
+  border-top: 2px solid #e0e0e0;
+  background: #f8f9fa;
+  border-radius: 0 0 16px 16px;
+}
+
+.assign-staff-btn {
+  padding: 10px 24px;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.assign-staff-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.assign-staff-btn-cancel {
+  background: #e0e0e0;
+  color: #555;
+}
+
+.assign-staff-btn-cancel:hover:not(:disabled) {
+  background: #d0d0d0;
+}
+
+.assign-staff-btn-assign {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+}
+
+.assign-staff-btn-assign:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .assign-staff-modal {
+    width: 95%;
+    max-height: 90vh;
+  }
+
+  .assign-staff-header h2 {
+    font-size: 1.2rem;
+  }
+
+  .assign-staff-table {
+    font-size: 0.85rem;
+  }
+
+  .assign-staff-table th,
+  .assign-staff-table td {
+    padding: 10px 12px;
+  }
+
+  .assign-staff-actions {
+    flex-direction: column;
+  }
+
+  .assign-staff-btn {
+    width: 100%;
+    justify-content: center;
+  }
+}
